@@ -8,28 +8,40 @@
     "hin_permissions": [
         {
             "zone": "processing",
-            "members": ["serviceAccount:dei-gh@hca-hin-dev-proc-sc.iam.gserviceaccount.com"],
+            "members": [
+                "serviceAccount:dei-gh@hca-hin-dev-proc-sc.iam.gserviceaccount.com"
+            ],
             "project": {
-                "gcp_base": ["roles/dataflow.viewer", "roles/dataflow.runner"]
+                "gcp_base": [
+                    "roles/dataflow.viewer",
+                    "roles/dataflow.runner"
+                ]
             }
         },
         {
             "zone": "landing",
-            "members": ["serviceAccount:dei-gh@hca-hin-dev-proc-sc.iam.gserviceaccount.com"],
+            "members": [
+                "serviceAccount:dei-gh@hca-hin-dev-proc-sc.iam.gserviceaccount.com"
+            ],
             "project": {
-                "gcp_base": ["roles/dataflow.viewer", "roles/storage.objectCreator"]
+                "gcp_base": [
+                    "roles/dataflow.viewer",
+                    "roles/storage.objectCreator"
+                ]
             }
         },
         {
             "zone": "curated",
-            "members": ["serviceAccount:dei-gh@hca-hin-dev-proc-sc.iam.gserviceaccount.com"],
+            "members": [
+                "serviceAccount:dei-gh@hca-hin-dev-proc-sc.iam.gserviceaccount.com"
+            ],
             "project": {
-                "gcp_base": ["roles/dataflow.viewer", "roles/bigquery.dataEditor"]
+                "gcp_base": [
+                    "roles/dataflow.viewer",
+                    "roles/bigquery.dataEditor"
+                ]
             }
         }
     ]
 }
 ```
-
-
-I've added the new roles to the `gcp_base` array within each zone's project object. This preserves the existing `roles/dataflow.viewer` permission while adding the new ones.  This approach is generally safer than replacing the entire array, as it avoids accidentally removing existing permissions.  If the intent is to *replace* `roles/dataflow.viewer`, then the provided roles should be the only ones in the arrays.
