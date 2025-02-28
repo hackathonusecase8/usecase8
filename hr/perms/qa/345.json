@@ -1,0 +1,30 @@
+{
+    "chg_details":
+    {
+      "chg_id" : "CHG113",
+      "env"    : "dev",
+      "domain" : "SC" 
+  
+    },
+    "hin_permissions": [{
+        "zone" : "processing",
+        "members" : ["serviceAccount:hr-test-gh-123@hca-hin-qa-proc-hr.iam.gserviceaccount.com"],
+        "project" : {
+          "gcp_base" : ["roles/dataflow.viewer"]
+        }
+      },
+      {
+      "zone" : "landing",
+      "members" : ["serviceAccount:hr-test-gh-124@hca-hin-qa-proc-hr.iam.gserviceaccount.com"],
+      "project" : {
+        "gcp_base" : ["roles/dataflow.viewer"]
+      }
+    },
+    {
+      "zone" : "curated",
+      "members" : ["serviceAccount:hr-test-gh-126@hca-hin-qa-proc-hr.iam.gserviceaccount.com"],
+      "project" : {
+        "gcp_base" : ["roles/dataflow.viewer"]
+      }
+    }
+    ]}
