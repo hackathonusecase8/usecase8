@@ -40,6 +40,3 @@
     ]
 }
 ```
-
-
-The solution iterates through the `hin_permissions` array, checks the `zone` of each object, and appends the new roles to the `gcp_base` array within the `project` object.  This preserves the existing `roles/dataflow.viewer` role while adding the new roles specified in the prompt. Using this method avoids the need for complex merging logic and ensures the correct roles are applied to the correct zones.
