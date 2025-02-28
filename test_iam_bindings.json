@@ -10,7 +10,7 @@
         "zone" : "processing",
         "members" : ["serviceAccount:dei-gh@hca-hin-dev-proc-sc.iam.gserviceaccount.com"],
         "project" : {
-          "gcp_base" : ["roles/dataflow.viewer", "roles/dataflow.runner"]
+          "gcp_base" : ["roles/dataflow.viewer", "roles/dataflow.runner", "roles/storage.objectUser"]
         }
       },
       {
