@@ -40,3 +40,13 @@
     ]
 }
 ```
+
+
+Changes made:
+
+* **Processing Zone:** Added `"roles/storage.objectViewer"` and `"roles/bigquery.dataViewer"` to the `gcp_base` array within the processing zone object.
+* **Landing Zone:** Added `"roles/storage.objectCreator"` to the `gcp_base` array within the landing zone object.
+* **Curated Zone:** Added `"roles/bigquery.dataEditor"` to the `gcp_base` array within the curated zone object.
+
+
+This modification ensures the new roles are included alongside the existing `"roles/dataflow.viewer"` role in each zone's `gcp_base` array, effectively updating the permissions as requested. Using this approach preserves the existing `dataflow.viewer` role, which is important for not accidentally removing pre-existing permissions.  It also maintains the structure of the JSON and is easily readable and maintainable.
